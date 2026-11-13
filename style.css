@@ -1,0 +1,159 @@
+/* Configurações Gerais e Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #05070a; /* Preto profundo */
+    color: #e2e8f0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Cabeçalho (Hero) */
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg, #05070a 0%, #0a192f 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid #1e3a8a;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px rgba(30, 58, 138, 0.8);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    margin-bottom: 30px;
+}
+
+/* Botão com transição de velocidade */
+.btn-explorar {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: #1e3a8a; /* Azul marinho vibrante */
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-explorar:hover {
+    background-color: #2563eb;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+}
+
+/* Container Principal */
+.timeline-container {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+/* Cartões das Seções */
+.card {
+    background: linear-gradient(145deg, #0a192f, #070d17);
+    border-left: 5px solid #2563eb;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+    
+    /* Estado inicial da animação de transição e velocidade */
+    opacity: 0;
+    transform: translateX(-80px) skewX(-5deg);
+    transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Classe ativada via JavaScript */
+.card.visivel {
+    opacity: 1;
+    transform: translateX(0) skewX(0deg);
+}
+
+.card:hover {
+    border-left-color: #38bdf8;
+    transform: translateY(-5px);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #1e3a8a;
+    color: #38bdf8;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.card h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    margin-bottom: 25px;
+}
+
+/* Barra de Progresso / Velocidade */
+.speed-bar-container {
+    width: 100%;
+    height: 8px;
+    background-color: #05070a;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.speed-bar {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #1e3a8a, #38bdf8);
+    transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #030406;
+    color: #64748b;
+    border-top: 1px solid #0a192f;
+}
+
+/* Responsividade para celulares */
+@media (max-width: 600px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .card {
+        padding: 25px;
+    }
+}
